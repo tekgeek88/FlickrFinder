@@ -26,10 +26,15 @@ class NetworkOperation {
             (let data, let response, let error) in
             
             // 1. Check HTTP response for successfull GET request
+            
+            /* First we cast the response to an HTTP response so that we can access the property fields with the actual http response codes*/
             if let httpResponse = response as? NSHTTPURLResponse {
+                
+                // Since the response code comes back as an Integer this is a great place to add all of the cases that can cbe returned back from the HTTP server
                 switch(httpResponse.statusCode) {
                 case 200:
-                    // 2. Create JSON object with data
+                    
+                    // 2. Create JSON object with the returned data
                     do {
                         let JSONDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as! [String: AnyObject]
                         completion(JSONDictionary)

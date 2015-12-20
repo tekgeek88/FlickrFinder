@@ -13,7 +13,8 @@ struct CurrentWeather {
     
     let temperature: Int?
     
-    
+    // This line serves as the entry point for a JSON Dictionary key.
+
     init(weatherDictionary: [String: AnyObject]) {
         temperature = weatherDictionary["temperature"] as? Int
         }

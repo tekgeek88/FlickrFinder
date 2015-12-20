@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     //////////////////////////////////////////////////////
     //     THE OUTLETS ASSOCIATED WITH THE VIEW ITEMS
     /////////////////////////////////////////////////////
-    @IBOutlet weak var photoSummary: UILabel?
+    @IBOutlet weak var photoTitleLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     
     
     
@@ -48,15 +50,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        retrieveWeatherForecast()
+
 
         
     }
     
     
     func configureView() {
-        print("configureView Ran!")
-        retrieveWeatherForecast()
+
         
     }
 
@@ -67,35 +68,55 @@ class ViewController: UIViewController {
 
 
     
-    // MARK: - Weather Fetching
+    // MARK: - Retrieve photos from Flickr
     
-    func retrieveWeatherForecast() {
-        print("A forecast was requested!")
-        let forecastService = ForecastService(APIKey: forecastAPIKey)
-        forecastService.getForecast(coordinate.lat, long: coordinate.long) {
-            (let forecast) in
-            if let weatherForecast = forecast,
-                let currentWeather = weatherForecast.currentWeather {
-                    // Update UI
-                    dispatch_async(dispatch_get_main_queue()) {
-                        // execute closure
-                        // This executes the task on the main thread and updates the labels and fields
-                        
-                        if let temperature = currentWeather.temperature{
-                            self.photoSummary?.text = "\(temperature)º"
-                        }
-                        
-                    }
+    
+    @IBAction func getPhotoFromFlickr(sender: AnyObject) {
+        print("You pushed the button!")
+
+        // 1. Get the photos
+        let urlString = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=ae369b9f4b35030234a9de1c3567d2cc&text=baby+asian+elephant&format=json&nojsoncallback=1"
+        let flickerService = FlickrService(FlickerAPIKey: urlString)
+        flickerService.getDictionaryObject {
+            (let currentPhotoDictionary) in
+            if let photoDictionary = currentPhotoDictionary {
+            
+                // 2. Determin the number of photos
+                let totalPhotos = photoDictionary.photos.count
+                    print("There are \(totalPhotos) total photos")
+                
+                let randomPhotoIndex = Int(arc4random_uniform(UInt32(totalPhotos)))
+                print("Random index is \(randomPhotoIndex)")
+                let randomPhoto = photoDictionary.photos[randomPhotoIndex]
+                print("Random photo is \(randomPhoto)")
+                
+                let photoURL = NSURL(string: randomPhoto.url!)
+                
+                
+            
+                let imageData = NSData(contentsOfURL: photoURL!)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.photoImageView.image = UIImage(data: imageData!)
+                        self.photoTitleLabel.text = "\(randomPhoto.title!)"
+                    })
+            
             }
+
+    
+
         }
-        
-        
-        
-        
-        
-    }// End of retrieve retrieveWeatherForecast()
+
+    }
+// End of getPhotoFromFlickr()
+
+
+    
+    //////////////////////////////////////////////////////
+    //              Keyboard Modifications
+    /////////////////////////////////////////////////////
     
     
     
-}
+    
+}// End of view controller class
 

@@ -36,8 +36,12 @@ struct ForecastService {
             networkOperation.downloadJSONFromURL {
                 (let JSONDictionary) in
                 // Parse the contents of the dictionary
+                
+                // print the whole JSON object
+                
                 let forecast = Forecast(weatherDictionary: JSONDictionary)
                 completion(forecast)
+                
             }
         }
         else {

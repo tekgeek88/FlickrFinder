@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3067E33207E96782A28535DE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A40655C3B1072D5388A58CE /* libPods.a */; };
+		8701743F1C25B82F00F37BB2 /* FlickrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8701743E1C25B82F00F37BB2 /* FlickrService.swift */; };
+		870174431C25C20C00F37BB2 /* CurrentDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870174421C25C20C00F37BB2 /* CurrentDictionary.swift */; };
+		870174471C2624AB00F37BB2 /* PhotosDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870174461C2624AB00F37BB2 /* PhotosDictionary.swift */; };
+		870174491C2624E700F37BB2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870174481C2624E700F37BB2 /* Photo.swift */; };
 		87270D1C1C22CE89004D2AA1 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87270D1B1C22CE89004D2AA1 /* NetworkOperation.swift */; };
 		87270D1E1C22CECD004D2AA1 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87270D1D1C22CECD004D2AA1 /* ForecastService.swift */; };
 		87270D201C22CF2F004D2AA1 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87270D1F1C22CF2F004D2AA1 /* Forecast.swift */; };
@@ -41,6 +45,10 @@
 /* Begin PBXFileReference section */
 		2A40655C3B1072D5388A58CE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		52709976FCF010C908D56502 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8701743E1C25B82F00F37BB2 /* FlickrService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrService.swift; sourceTree = "<group>"; };
+		870174421C25C20C00F37BB2 /* CurrentDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDictionary.swift; sourceTree = "<group>"; };
+		870174461C2624AB00F37BB2 /* PhotosDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDictionary.swift; sourceTree = "<group>"; };
+		870174481C2624E700F37BB2 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8703C5111C23940D00F359FC /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
 		87270D1B1C22CE89004D2AA1 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		87270D1D1C22CECD004D2AA1 /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 				87270D1D1C22CECD004D2AA1 /* ForecastService.swift */,
 				87270D1F1C22CF2F004D2AA1 /* Forecast.swift */,
 				87270D211C22CF7C004D2AA1 /* CurrentWeather.swift */,
+				870174421C25C20C00F37BB2 /* CurrentDictionary.swift */,
+				870174481C2624E700F37BB2 /* Photo.swift */,
+				8701743E1C25B82F00F37BB2 /* FlickrService.swift */,
+				870174461C2624AB00F37BB2 /* PhotosDictionary.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -373,10 +385,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				87270D1E1C22CECD004D2AA1 /* ForecastService.swift in Sources */,
+				8701743F1C25B82F00F37BB2 /* FlickrService.swift in Sources */,
 				87A8469A1C22BE6E0090D66B /* ViewController.swift in Sources */,
 				87270D1C1C22CE89004D2AA1 /* NetworkOperation.swift in Sources */,
 				87A846981C22BE6E0090D66B /* AppDelegate.swift in Sources */,
+				870174471C2624AB00F37BB2 /* PhotosDictionary.swift in Sources */,
 				87270D221C22CF7C004D2AA1 /* CurrentWeather.swift in Sources */,
+				870174431C25C20C00F37BB2 /* CurrentDictionary.swift in Sources */,
+				870174491C2624E700F37BB2 /* Photo.swift in Sources */,
 				87270D201C22CF2F004D2AA1 /* Forecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
