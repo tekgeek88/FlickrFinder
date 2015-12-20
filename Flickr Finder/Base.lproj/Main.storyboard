@@ -127,6 +127,9 @@
                     <connections>
                         <outlet property="photoImageView" destination="2Kb-uG-BcO" id="WZI-lJ-iDV"/>
                         <outlet property="photoTitleLabel" destination="Ggp-QQ-TPl" id="GPA-ae-p6G"/>
+                        <outlet property="searchByDescription" destination="aS8-9B-js4" id="4g1-Dz-kVE"/>
+                        <outlet property="searchByLattitude" destination="GKi-B9-ueR" id="jTb-2j-rci"/>
+                        <outlet property="searchByLongitude" destination="k45-fm-DVW" id="GfQ-ha-Q6J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
